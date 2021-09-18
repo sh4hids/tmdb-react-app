@@ -1,12 +1,13 @@
 export const env = process.env.REACT_ENV;
 export const apiUrl = process.env.REACT_APP_API_URL;
+
 export const siteMetadata = {
-  siteTitle: "Gatsby Theme Open Sourcerer",
-  siteDescription: "A minimal gatsby theme for open source developer",
-  siteUrl: "https://example.com/",
+  siteTitle: "mDB React",
+  siteDescription: "A minimal version of tmdb in React",
+  siteUrl: "",
   siteLogo: "",
   contentPath: "contents",
-  headerLogoText: "HackerMan",
+  headerLogoText: "mDB",
   seoImage: "/images/seo.jpg",
   heroImage: "",
   titleSeparator: "|",

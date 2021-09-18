@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import urljoin from "url-join";
 import generateSchema from "../utils/generateSchema";
 import { siteMetadata } from "../config";

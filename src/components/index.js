@@ -7,6 +7,8 @@ export { default as Container } from "./Container";
 
 export { default as Header } from "./Header";
 export { default as HeaderMenu } from "./HeaderMenu";
+export { default as HeroSection } from "./HeroSection";
+export { default as Image } from "./Image";
 
 export { default as MenuIcon } from "./MenuIcon";
 export { default as SEO } from "./SEO";

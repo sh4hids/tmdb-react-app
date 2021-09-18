@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 
 import linkUnderline from "../assets/images/link-underline.svg";
@@ -83,17 +82,17 @@ const HeaderMenuWrapper = styled.ul`
 const HeaderMenu = ({ isMenuOpen }) => (
   <HeaderMenuWrapper isMenuOpen={isMenuOpen}>
     <li>
-      <NavLink to="/movies" activeClassName="active">
+      <NavLink exact to="/movies" activeClassName="active">
         All Movies
       </NavLink>
     </li>
     <li>
-      <NavLink to="/movies/latest" activeClassName="active" partiallyActive>
+      <NavLink exact to="/movies/latest" activeClassName="active">
         Latest
       </NavLink>
     </li>
     <li>
-      <NavLink to="/movies/popular" activeClassName="active">
+      <NavLink exact to="/movies/popular" activeClassName="active">
         Popular
       </NavLink>
     </li>
