@@ -1,6 +1,7 @@
 export const env = process.env.REACT_ENV;
 export const apiUrl = process.env.REACT_APP_API_URL;
-export const tmdbImagePath = process.env.REACT_APP_TMDB_IMAGE_PATH;
+export const tmdbImagePath =
+  process.env.REACT_APP_TMDB_IMAGE_PATH || "https://image.tmdb.org/t/p";
 
 export const siteMetadata = {
   siteTitle: "mDB React",
