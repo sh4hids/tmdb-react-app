@@ -157,16 +157,13 @@ const GlobalStyle = createGlobalStyle`
     width: 8px;
     height: 8px;
   }
-
   ::-webkit-scrollbar-track {
-    background-color: var(--color-bg-1);
+    background-color: transparent;
   }
-
   ::-webkit-scrollbar-thumb {
     cursor: pointer;
-    background-color: var(--color-accent-0);
+    background-color: var(--color-light-2);
     transition: all ease-in-out 0.3s;
-
     
     :hover {
       background-color: var(--color-accent-1);

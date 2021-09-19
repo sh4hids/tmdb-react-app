@@ -1,23 +1,15 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React from "react";
 
-import { getMoviesAsync } from "../redux/movieSlice";
-import { Text } from "../components";
+import { Text, PopularMoviesSection, LatestMoviesSection } from "../components";
 import { DefaultLayout } from "../layouts";
 
 export default function HomePage() {
-  const dispatch = useDispatch();
-  const movies = useSelector((state) => state.movies.list);
-
-  console.log(movies);
-
-  useEffect(() => {
-    dispatch(getMoviesAsync());
-  }, [dispatch]);
-
   return (
     <DefaultLayout>
-      <Text variant="h1">Total movies: {movies?.data?.totalResults ?? 0}</Text>
+      <Text variant="h2">What's popular</Text>
+      <PopularMoviesSection />
+      <Text variant="h2">What's new</Text>
+      <LatestMoviesSection />
     </DefaultLayout>
   );
 }

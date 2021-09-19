@@ -14,6 +14,7 @@ const Wrapper = styled(Box)`
   flex-direction: column;
 
   background-image: url(${({ bgImage }) => bgImage});
+  opacity: ${({ gradient }) => (gradient ? 0.3 : 1)};
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -21,7 +22,12 @@ const Wrapper = styled(Box)`
 
 const HeroSection = ({ imageLink, children, ...props }) => {
   return (
-    <Wrapper p={3} bgImage={imageLink || "/images/hero-bg.jpg"} {...props}>
+    <Wrapper
+      p={3}
+      bgImage={imageLink || "/images/hero-bg.jpg"}
+      {...props}
+      gradient={imageLink}
+    >
       {children}
     </Wrapper>
   );

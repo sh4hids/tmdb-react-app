@@ -5,7 +5,7 @@ import theme from "../styles/theme";
 import GlobalStyle from "../styles/GlobalStyles";
 import { Header, Container, SEO, HeroSection } from "../components";
 
-const DefaultLayout = ({ children, title, description, url, image }) => {
+const DetailsPageLayout = ({ children, title, description, url, image }) => {
   //   const context = useContext(ThemeContext);
   //   const selectedTheme = context.colorMode || "light";
 
@@ -17,12 +17,12 @@ const DefaultLayout = ({ children, title, description, url, image }) => {
       // colorMode={context.colorMode}
       // setColorMode={context.setColorMode}
       />
+      <HeroSection imageLink={image} />
       <Container p={3} pt={60}>
-        <HeroSection imageLink={image} />
         {children}
       </Container>
     </ThemeProvider>
   );
 };
 
-export default DefaultLayout;
+export default DetailsPageLayout;
