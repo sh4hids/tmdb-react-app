@@ -3,7 +3,7 @@ import { ThemeProvider } from "styled-components";
 
 import theme from "../styles/theme";
 import GlobalStyle from "../styles/GlobalStyles";
-import { Header, Container, SEO, HeroSection } from "../components";
+import { Header, SEO } from "../components";
 
 const DetailsPageLayout = ({ children, title, description, url, image }) => {
   //   const context = useContext(ThemeContext);
@@ -17,10 +17,7 @@ const DetailsPageLayout = ({ children, title, description, url, image }) => {
       // colorMode={context.colorMode}
       // setColorMode={context.setColorMode}
       />
-      <HeroSection imageLink={image} />
-      <Container p={3} pt={60}>
-        {children}
-      </Container>
+      {children}
     </ThemeProvider>
   );
 };

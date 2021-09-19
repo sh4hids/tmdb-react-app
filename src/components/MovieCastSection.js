@@ -1,11 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
-import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { format } from "date-fns";
 
 import { tmdbImagePath } from "../config";
-import { getPopularMoviesAsync } from "../redux/movieSlice";
 import Box from "./Box";
 import Text from "./Text";
 import Image from "./Image";
@@ -27,35 +24,28 @@ const Wrapper = styled(Box)`
   margin-bottom: 32px;
 `;
 
-const PopularMoviesSection = () => {
-  const dispatch = useDispatch();
-  const movies = useSelector((state) => state.movies.popularMovies);
-
-  useEffect(() => {
-    dispatch(getPopularMoviesAsync());
-  }, [dispatch]);
-
+const MovieCastSection = ({ cast = [] }) => {
   return (
     <Wrapper>
-      {movies?.data?.results.map((movie) => (
-        <Box ml={40} width={150} minWidth={150} key={movie.id}>
+      {cast.map((person) => (
+        <Box ml={40} width={150} minWidth={150} key={person.id}>
           <MoviePreviewCard>
-            <Link to={`/movies/${movie.id}`}>
-              {movie.poster_path ? (
-                <Image src={`${tmdbImagePath}/w500${movie.poster_path}`} />
+            <>
+              {person.profile_path ? (
+                <Image src={`${tmdbImagePath}/w500${person.profile_path}`} />
               ) : (
                 <NoImage />
               )}
-            </Link>
+            </>
           </MoviePreviewCard>
           <Box p="26px 10px 12px 10px;">
-            <Link to={`/movies/${movie.id}`}>
+            <Link to={`/movies/${person.id}`}>
               <Text m={0} variant="h6">
-                {movie.title || movie.original_title}
+                {person.name}
               </Text>
             </Link>
             <Text m={0} variant="label1">
-              {format(new Date(movie.release_date), "MMMM dd, yyyy")}
+              {person.character}
             </Text>
           </Box>
         </Box>
@@ -64,4 +54,4 @@ const PopularMoviesSection = () => {
   );
 };
 
-export default PopularMoviesSection;
+export default MovieCastSection;

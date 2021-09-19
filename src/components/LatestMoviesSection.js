@@ -31,8 +31,6 @@ const LatestMoviesSection = () => {
   const dispatch = useDispatch();
   const movies = useSelector((state) => state.movies.latestMovies);
 
-  console.log(movies);
-
   useEffect(() => {
     dispatch(getLatestMoviesAsync());
   }, [dispatch]);
