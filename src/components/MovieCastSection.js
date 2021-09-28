@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 import { tmdbImagePath } from "../config";
 import Box from "./Box";
@@ -39,11 +38,10 @@ const MovieCastSection = ({ cast = [] }) => {
             </>
           </MoviePreviewCard>
           <Box p="26px 10px 12px 10px;">
-            <Link to={`/movies/${person.id}`}>
-              <Text m={0} variant="h6">
-                {person.name}
-              </Text>
-            </Link>
+            <Text m={0} variant="h6">
+              {person.name}
+            </Text>
+
             <Text m={0} variant="label1">
               {person.character}
             </Text>

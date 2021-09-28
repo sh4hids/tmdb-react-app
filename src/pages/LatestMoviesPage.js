@@ -5,7 +5,7 @@ import { DefaultLayout } from "../layouts";
 
 export default function LatestMoviesPage() {
   return (
-    <DefaultLayout>
+    <DefaultLayout title="Latest Movies">
       <Text variant="h2">Latest movies</Text>
       <LatestMoviesSection />
     </DefaultLayout>
